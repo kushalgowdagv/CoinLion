@@ -1,0 +1,29 @@
+Metric,Value
+Start,2020-01-01 00:00:00
+End,2025-04-01 23:50:00
+Period,"{'start': 60163, 'end': 276190}"
+Start Value,10000.000000
+End Value,31368.564849
+Total Return [%],213.685648
+Benchmark Return [%],1089.395116
+Max Gross Exposure [%],1894.232340
+Total Fees Paid,0.000000
+Max Drawdown [%],77.906520
+Max Drawdown Duration,1500 days 04:30:00
+Total Trades,2119
+Total Closed Trades,2119
+Total Open Trades,0
+Open Trade PnL,0.000000
+Win Rate [%],37.564889
+Best Trade [%],24.074039
+Worst Trade [%],-7.546229
+Avg Winning Trade [%],2.875611
+Avg Losing Trade [%],-1.576011
+Avg Winning Trade Duration,0 days 00:00:00
+Avg Losing Trade Duration,0 days 00:00:00
+Profit Factor,1.048622
+Expectancy,10.084268
+Sharpe Ratio,0.668385
+Calmar Ratio,0.312141
+Omega Ratio,1.010115
+Sortino Ratio,0.807678
