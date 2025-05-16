@@ -672,36 +672,6 @@ class BacktestEngine:
                 # Clear position
                 position = None
             
-            # Check for entry signal
-            # if not position and prev_candle['signal'] != 0:
-            #     # Calculate position size
-            #     position_capital = capital * self.trade_size
-            #     position_size = position_capital / current_candle['o']
-                
-            #     # Update tracking
-            #     position_type = 'long' if prev_candle['signal'] == 1 else 'short'
-                
-            #     # Record position
-            #     position = {
-            #         'entry_time': current_candle.name,
-            #         'entry_price': current_candle['o'],
-            #         'size': position_size,
-            #         'type': position_type,
-            #         'highest_price': current_candle['o'],
-            #         'lowest_price': current_candle['o']
-            #     }
-            #     self.positions.append(position)
-                
-            #     # Update tracking with new position
-            #     candle_tracking['position_type'] = position_type
-            #     candle_tracking['position_size'] = position_size
-            #     candle_tracking['position_entry'] = current_candle['o']
-            #     candle_tracking['position_entry_time'] = current_candle.name
-            #     candle_tracking['highest_price'] = current_candle['o']
-            #     candle_tracking['lowest_price'] = current_candle['o']
-            
-            # # Save detailed tracking for this candle
-            # self.detailed_tracking.append(candle_tracking)
 
             if not position and prev_candle['signal'] != 0:
                 # For buy_sell strategy, only enter long positions on buy signals
@@ -726,7 +696,7 @@ class BacktestEngine:
                         'lowest_price': current_candle['o']
                     }
                     self.positions.append(position)
-                                # Update tracking with new position
+                    # Update tracking with new position
                     candle_tracking['position_type'] = position_type
                     candle_tracking['position_size'] = position_size
                     candle_tracking['position_entry'] = current_candle['o']
@@ -932,6 +902,7 @@ class BacktestEngine:
         avg_winning_trade_pct = winning_trades['pnl_pct'].mean() * 100 if not winning_trades.empty else 0
         avg_losing_trade_pct = losing_trades['pnl_pct'].mean() * 100 if not losing_trades.empty else 0
         
+
         # Calculate trade durations - with error handling
         try:
             # Make sure entry_time and exit_time are datetime objects
@@ -944,11 +915,17 @@ class BacktestEngine:
             # Calculate duration and add as a new column
             trades_df['duration'] = trades_df['exit_time'] - trades_df['entry_time']
             
+            # Now create winning and losing trade subsets WITH EXPLICIT COPIES
+            winning_trades = trades_df[trades_df['pnl'] > 0].copy()
+            losing_trades = trades_df[trades_df['pnl'] <= 0].copy()
+            
             # Calculate average durations for winning and losing trades
             avg_winning_duration = winning_trades['duration'].mean() if not winning_trades.empty else pd.Timedelta(0)
             avg_losing_duration = losing_trades['duration'].mean() if not losing_trades.empty else pd.Timedelta(0)
         except Exception as e:
+            import traceback
             print(f"Warning: Could not calculate trade durations: {e}")
+            print(traceback.format_exc())  # Add this to get full error details
             # Set default values if duration calculation fails
             avg_winning_duration = pd.Timedelta(0)
             avg_losing_duration = pd.Timedelta(0)
