@@ -1,0 +1,2 @@
+period,train_start,train_end,test_start,test_end,short_window,long_window,signal_window,strategy_type,trailing_stop,train_return,train_sharpe,test_return,test_sharpe,test_win_rate,test_max_drawdown,test_trades
+2,2020-07-01,2021-07-01,2021-07-01,2022-01-01,16,26,13,buy_sell,0.01,2.3662383196091783,2.700765583568287,-0.1762028048467857,-0.6690040326383954,0.3199513381995134,0.3114790179522824,822
