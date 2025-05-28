@@ -1,0 +1,33 @@
+metric,value
+start,2024-01-01 00:00:00
+end,2024-06-30 23:50:00
+period_start,14224
+period_end,26206
+start_value,10000
+end_value,11297.401352855497
+total_return,0.1297401352855497
+benchmark_return,0.4786565021304774
+max_gross_exposure,1.9231875764959618
+total_fees_paid,0
+max_drawdown,0.21486734619647768
+max_drawdown_duration,83 days 05:00:00
+total_trades,829
+total_closed_trades,829
+total_open_trades,0
+open_trade_pnl,0
+win_rate,0.36550060313630883
+best_trade,5.291642668903887
+worst_trade,-2.1199334916011607
+avg_winning_trade,0.7617583459189493
+avg_losing_trade,-0.4101601564690269
+avg_winning_trade_duration,0 days 04:05:42.574257425
+avg_losing_trade_duration,0 days 01:31:43.802281368
+profit_factor,1.0498496172081981
+expectancy,1.565019726001804
+sharpe_ratio,0.9009548883387704
+calmar_ratio,1.29799133569701
+omega_ratio,1.017416958395163
+sortino_ratio,0.8453968298710208
+exit_reasons_signal,692
+exit_reasons_trailing_stop,136
+exit_reasons_end_of_data,1
