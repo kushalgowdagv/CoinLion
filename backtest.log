@@ -24055,3 +24055,279 @@ Strategy Type  Short Window  Long Window  Signal Window Total Return (%) Sharpe 
 2025-06-09 02:15:00,333 - __main__ - WARNING - Error with parameters (8, 21, 5, 'buy_hold', 0.01): Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
 2025-06-09 02:15:01,130 - __main__ - WARNING - Error with parameters (8, 21, 21, 'reversal', 0.03): Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
 2025-06-09 02:15:02,061 - __main__ - WARNING - Error with parameters (8, 21, 17, 'buy_hold', 0.03): Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:53:30,489 - __main__ - INFO - Starting trading backtest analysis suite
+2025-06-13 21:53:30,490 - __main__ - INFO - 
+==================================================
+2025-06-13 21:53:30,490 - __main__ - INFO - Example 5: Walk-Forward Analysis
+2025-06-13 21:53:30,490 - __main__ - INFO - ==================================================
+2025-06-13 21:53:30,490 - __main__ - INFO - Running walk-forward analysis for BTCUSD on 10m timeframe
+2025-06-13 21:53:30,490 - __main__ - INFO - Initialized DataHandler with base directory: C:\Users\sagar\OneDrive\Documents\GitHub\CoinLion
+2025-06-13 21:53:30,491 - __main__ - INFO - Loading data for btcusd on 10m timeframe...
+2025-06-13 21:53:31,498 - __main__ - WARNING - Found 1 non-uniform time intervals
+2025-06-13 21:53:31,505 - __main__ - INFO - Non-uniform intervals report saved to output\btcusd_10m_20250613_215330\walk_forward_strategy\btcusd_10m_non_uniform_intervals_20250613_215331.csv
+2025-06-13 21:53:31,506 - __main__ - INFO - Successfully loaded 275708 rows of data for btcusd
+2025-06-13 21:53:31,772 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-13 21:53:32,998 - __main__ - INFO - Resampling changes saved to output\btcusd_10m_20250613_215330\walk_forward_strategy\BTCUSD_10T_resampled_changes_20250613_215331.csv
+2025-06-13 21:53:33,118 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-13 21:53:33,158 - __main__ - INFO - Initialized WalkForwardTester
+2025-06-13 21:53:33,159 - __main__ - INFO - Starting walk-forward testing for btcusd
+2025-06-13 21:53:33,167 - __main__ - INFO - Generated 8 time periods for walk-forward testing
+2025-06-13 21:53:33,168 - __main__ - INFO - Period 1: Training 2020-01-01 00:00:00 to 2021-01-01 00:00:00, Testing 2021-01-01 00:00:00 to 2021-07-01 00:00:00
+2025-06-13 21:53:33,211 - __main__ - INFO - Optimizing parameters on training data (52704 rows)...
+2025-06-13 21:53:33,213 - __main__ - INFO - Generated 1080 valid parameter combinations
+2025-06-13 21:53:33,224 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=5, strategy_type='buy_sell')
+2025-06-13 21:53:33,224 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.01, position_size=1.0)
+2025-06-13 21:53:33,227 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=5, strategy_type='buy_sell')
+2025-06-13 21:53:33,228 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 21:53:33,239 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=5, strategy_type='buy_sell')
+2025-06-13 21:53:33,242 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.03, position_size=1.0)
+2025-06-13 21:53:33,249 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=5, strategy_type='reversal')
+2025-06-13 21:53:33,252 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.01, position_size=1.0)
+2025-06-13 21:53:33,259 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=5, strategy_type='reversal')
+2025-06-13 21:53:33,269 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 21:53:33,281 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=5, strategy_type='reversal')
+2025-06-13 21:53:33,285 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.03, position_size=1.0)
+2025-06-13 21:53:33,310 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=5, strategy_type='buy_hold')
+2025-06-13 21:53:33,316 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.01, position_size=1.0)
+2025-06-13 21:53:33,329 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=5, strategy_type='buy_hold')
+2025-06-13 21:53:33,334 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 21:53:33,346 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=5, strategy_type='buy_hold')
+2025-06-13 21:53:33,356 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.03, position_size=1.0)
+2025-06-13 21:53:33,358 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=9, strategy_type='buy_sell')
+2025-06-13 21:53:33,358 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.01, position_size=1.0)
+2025-06-13 21:53:33,364 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=9, strategy_type='buy_sell')
+2025-06-13 21:53:33,365 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 21:53:33,370 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=9, strategy_type='buy_sell')
+2025-06-13 21:53:33,389 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.03, position_size=1.0)
+2025-06-13 21:53:33,391 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=9, strategy_type='reversal')
+2025-06-13 21:53:33,393 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:33,395 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.01, position_size=1.0)
+2025-06-13 21:53:33,396 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:33,399 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=9, strategy_type='reversal')
+2025-06-13 21:53:33,407 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:33,408 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=9, strategy_type='reversal')
+2025-06-13 21:53:33,408 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:33,414 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:33,436 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 21:53:33,459 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:33,459 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=9, strategy_type='buy_hold')
+2025-06-13 21:53:33,473 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:33,486 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.03, position_size=1.0)
+2025-06-13 21:53:33,535 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:33,537 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:33,552 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=9, strategy_type='buy_hold')
+2025-06-13 21:53:33,618 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:33,623 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=9, strategy_type='buy_hold')
+2025-06-13 21:53:33,647 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:33,682 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.01, position_size=1.0)
+2025-06-13 21:53:33,725 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=13, strategy_type='buy_sell')
+2025-06-13 21:53:33,762 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:34,191 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=13, strategy_type='buy_sell')
+2025-06-13 21:53:34,257 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 21:53:34,429 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:34,474 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.03, position_size=1.0)
+2025-06-13 21:53:34,830 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:34,848 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:34,942 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:34,989 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.01, position_size=1.0)
+2025-06-13 21:53:35,128 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:35,409 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 21:53:35,455 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:35,661 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:36,272 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:36,475 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:36,571 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:36,731 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:37,591 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:37,731 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:38,563 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:40,343 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:40,825 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:41,534 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:43,759 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:44,803 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:45,005 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:46,420 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:46,579 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:48,853 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:48,913 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:50,737 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:50,904 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:53:52,293 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:53:52,914 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:56:53,933 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=17255.49, Return=72.55%
+2025-06-13 21:57:04,736 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=22092.18, Return=120.92%
+2025-06-13 21:57:06,587 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=16194.10, Return=61.94%
+2025-06-13 21:57:12,004 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=29462.64, Return=194.63%
+2025-06-13 21:57:12,179 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=7191.46, Return=-28.09%
+2025-06-13 21:57:13,610 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=17071.68, Return=70.72%
+2025-06-13 21:57:14,514 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=4550.18, Return=-54.50%
+2025-06-13 21:57:16,279 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:16,511 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:16,995 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:17,078 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=13, strategy_type='buy_sell')
+2025-06-13 21:57:17,556 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.03, position_size=1.0)
+2025-06-13 21:57:17,910 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=28224.81, Return=182.25%
+2025-06-13 21:57:18,792 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=17685.94, Return=76.86%
+2025-06-13 21:57:19,507 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=8941.16, Return=-10.59%
+2025-06-13 21:57:19,570 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=4522.50, Return=-54.77%
+2025-06-13 21:57:22,273 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:22,463 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:22,647 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:22,786 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:23,037 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:23,132 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:23,737 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=13, strategy_type='reversal')
+2025-06-13 21:57:23,783 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.01, position_size=1.0)
+2025-06-13 21:57:23,784 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=13, strategy_type='reversal')
+2025-06-13 21:57:24,003 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 21:57:24,111 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:57:24,482 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:57:25,285 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:25,653 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:25,791 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:26,508 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=13, strategy_type='reversal')
+2025-06-13 21:57:26,725 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.03, position_size=1.0)
+2025-06-13 21:57:26,992 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:27,034 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:27,486 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:28,043 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=13, strategy_type='buy_hold')
+2025-06-13 21:57:28,275 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.01, position_size=1.0)
+2025-06-13 21:57:28,403 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=30803.50, Return=208.03%
+2025-06-13 21:57:28,666 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:28,681 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:28,957 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:29,179 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:29,221 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=13, strategy_type='buy_hold')
+2025-06-13 21:57:29,331 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:29,767 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:30,017 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 21:57:30,266 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:30,464 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:31,073 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=21513.77, Return=115.14%
+2025-06-13 21:57:31,197 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:31,483 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:57:31,699 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:31,715 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=30047.71, Return=200.48%
+2025-06-13 21:57:31,761 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=13, strategy_type='buy_hold')
+2025-06-13 21:57:31,939 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:57:31,979 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=17, strategy_type='buy_sell')
+2025-06-13 21:57:32,199 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:57:32,494 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:32,842 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:57:34,651 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.03, position_size=1.0)
+2025-06-13 21:57:34,870 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:57:35,057 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.01, position_size=1.0)
+2025-06-13 21:57:35,105 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:35,641 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:35,916 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:57:36,270 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:57:36,773 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=23751.32, Return=137.51%
+2025-06-13 21:57:36,883 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:37,134 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:37,351 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=17, strategy_type='buy_sell')
+2025-06-13 21:57:37,585 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:57:37,780 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:57:37,817 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:37,845 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=20239.68, Return=102.40%
+2025-06-13 21:57:38,208 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:38,770 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:38,956 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 21:57:39,087 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=15395.12, Return=53.95%
+2025-06-13 21:57:39,111 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:57:39,236 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:39,359 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:39,623 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=17, strategy_type='buy_sell')
+2025-06-13 21:57:41,056 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:41,821 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=17, strategy_type='reversal')
+2025-06-13 21:57:42,259 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.03, position_size=1.0)
+2025-06-13 21:57:42,666 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:57:42,667 - __main__ - INFO - Initialized MACDStrategy with config: StrategyConfig(short_window=8, long_window=21, signal_window=17, strategy_type='reversal')
+2025-06-13 21:57:43,067 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.01, position_size=1.0)
+2025-06-13 21:57:43,255 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:57:43,335 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 21:57:43,412 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=6676.20, Return=-33.24%
+2025-06-13 21:57:43,678 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:57:44,350 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:57:45,136 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:45,379 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:45,504 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=27379.56, Return=173.80%
+2025-06-13 21:57:45,504 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:47,404 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=7344.83, Return=-26.55%
+2025-06-13 21:57:48,356 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:48,433 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:48,504 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:57:48,569 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:49,042 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:57:49,967 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:50,682 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:50,714 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:50,828 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:57:50,837 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:57:51,693 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:57:52,052 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:57:52,148 - __main__ - INFO - Initialized BacktestEngine
+2025-06-13 21:57:53,187 - __main__ - INFO - Starting backtest execution
+2025-06-13 21:57:56,613 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:56,691 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:57:57,045 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:58:01,694 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:58:01,726 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:58:01,757 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:58:02,272 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:58:02,584 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:58:02,678 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:58:03,051 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:58:03,393 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:58:03,673 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:58:10,819 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:58:10,957 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:58:11,207 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 21:59:56,581 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=15931.27, Return=59.31%
+2025-06-13 21:59:59,949 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=5881.90, Return=-41.18%
+2025-06-13 22:00:04,766 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=24265.17, Return=142.65%
+2025-06-13 22:00:05,372 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=9077.95, Return=-9.22%
+2025-06-13 22:00:06,541 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=6867.12, Return=-31.33%
+2025-06-13 22:00:09,238 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=18602.81, Return=86.03%
+2025-06-13 22:00:10,094 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=16562.53, Return=65.63%
+2025-06-13 22:00:10,267 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=17612.58, Return=76.13%
+2025-06-13 22:00:10,792 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:10,910 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:11,027 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:11,450 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=7699.23, Return=-23.01%
+2025-06-13 22:00:11,761 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:11,762 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=22297.56, Return=122.98%
+2025-06-13 22:00:11,764 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:11,900 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:12,101 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:12,117 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:12,183 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:13,506 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:13,548 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:13,633 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:13,853 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:14,083 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:14,083 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:14,118 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:14,291 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:14,333 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:14,474 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:14,721 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:14,769 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:15,006 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=21950.61, Return=119.51%
+2025-06-13 22:00:15,116 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:15,167 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:15,230 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:15,754 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:15,769 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:15,786 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:15,786 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:15,818 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=8931.14, Return=-10.69%
+2025-06-13 22:00:15,818 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:15,883 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:16,025 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:16,026 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:16,026 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:16,206 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:16,207 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 22:00:16,207 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
