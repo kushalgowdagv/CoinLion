@@ -1,2 +1,0 @@
-period,train_start,train_end,test_start,test_end,short_window,long_window,signal_window,strategy_type,trailing_stop,train_return,train_sharpe,test_return,test_sharpe,test_win_rate,test_max_drawdown,test_trades
-5,2022-01-01,2023-01-01,2023-01-01,2023-07-01,12,21,9,reversal,0.03,0.015362866347408636,0.34857840965634884,0.22252774528432548,1.1051394142916127,0.3424329501915709,0.21181067227710323,2088
