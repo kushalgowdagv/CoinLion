@@ -24331,3 +24331,313 @@ Strategy Type  Short Window  Long Window  Signal Window Total Return (%) Sharpe 
 2025-06-13 22:00:16,206 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
 2025-06-13 22:00:16,207 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
 2025-06-13 22:00:16,207 - __main__ - ERROR - Error in single optimization: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 23:24:13,908 - __main__ - INFO - 
+==================================================
+2025-06-13 23:24:13,915 - __main__ - INFO - ==================================================
+2025-06-13 23:24:13,926 - __main__ - INFO - Strategy config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=2, strategy_type='btc_volume_eth')
+2025-06-13 23:24:13,927 - __main__ - INFO - Risk config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 23:24:13,927 - __main__ - INFO - Initialized DataHandler with base directory: C:\Users\sagar\OneDrive\Documents\GitHub\CoinLion
+2025-06-13 23:24:16,126 - __main__ - INFO - Aligned data to 275708 common timestamps
+2025-06-13 23:24:16,207 - __main__ - WARNING - Found 1 non-uniform time intervals in BTC
+2025-06-13 23:24:16,244 - __main__ - WARNING - Found 1 non-uniform time intervals in ETH
+2025-06-13 23:24:16,249 - __main__ - INFO - Non-uniform intervals report saved to output\btcusd_ethusd_10m_20250613_232413\btc_volume_eth_strategy\btcusd_ethusd_10m_non_uniform_intervals_20250613_232416.csv
+2025-06-13 23:24:16,250 - __main__ - INFO - Successfully loaded 275708 rows of BTC data and 275708 rows of ETH data
+2025-06-13 23:24:16,439 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-13 23:24:17,830 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250613_232413\btc_volume_eth_strategy\BTCUSD_10T_resampled_changes_20250613_232416.csv
+2025-06-13 23:24:17,932 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-13 23:24:18,107 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-13 23:24:19,869 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250613_232413\btc_volume_eth_strategy\ETHUSD_10T_resampled_changes_20250613_232418.csv
+2025-06-13 23:24:20,012 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-13 23:24:20,215 - __main__ - INFO - Aligned data to 276192 common timestamps
+2025-06-13 23:24:20,228 - __main__ - INFO - Initialized BTCVolumeETHStrategy with config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=2, strategy_type='btc_volume_eth')
+2025-06-13 23:24:20,229 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-13 23:26:19,699 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=1935.90, Return=-80.64%
+2025-06-13 23:26:20,087 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 23:26:20,088 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 23:26:20,263 - __main__ - ERROR - Error in main execution: Failed to create report: Backtest failed: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-13 23:26:20,265 - __main__ - ERROR - Analysis failed: Failed to create report: Backtest failed: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-14 00:00:12,832 - __main__ - INFO - 
+==================================================
+2025-06-14 00:00:12,840 - __main__ - INFO - ==================================================
+2025-06-14 00:00:12,856 - __main__ - INFO - Strategy config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=2, strategy_type='btc_volume_eth')
+2025-06-14 00:00:12,858 - __main__ - INFO - Risk config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-14 00:00:12,859 - __main__ - INFO - Initialized DataHandler with base directory: C:\Users\sagar\OneDrive\Documents\GitHub\CoinLion
+2025-06-14 00:00:14,843 - __main__ - INFO - Aligned data to 275708 common timestamps
+2025-06-14 00:00:14,943 - __main__ - WARNING - Found 1 non-uniform time intervals in BTC
+2025-06-14 00:00:14,978 - __main__ - WARNING - Found 1 non-uniform time intervals in ETH
+2025-06-14 00:00:14,985 - __main__ - INFO - Non-uniform intervals report saved to output\btcusd_ethusd_10m_20250614_000012\btc_volume_eth_strategy\btcusd_ethusd_10m_non_uniform_intervals_20250614_000014.csv
+2025-06-14 00:00:14,986 - __main__ - INFO - Successfully loaded 275708 rows of BTC data and 275708 rows of ETH data
+2025-06-14 00:00:15,190 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 00:00:16,462 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_000012\btc_volume_eth_strategy\BTCUSD_10T_resampled_changes_20250614_000015.csv
+2025-06-14 00:00:16,530 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 00:00:16,737 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 00:00:18,071 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_000012\btc_volume_eth_strategy\ETHUSD_10T_resampled_changes_20250614_000016.csv
+2025-06-14 00:00:18,153 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 00:00:18,275 - __main__ - INFO - Aligned data to 276192 common timestamps
+2025-06-14 00:00:18,283 - __main__ - INFO - Initialized BTCVolumeETHStrategy with config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=2, strategy_type='btc_volume_eth')
+2025-06-14 00:00:18,283 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-14 00:01:28,499 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=1935.90, Return=-80.64%
+2025-06-14 00:01:28,641 - __main__ - ERROR - Error calculating performance metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-14 00:01:28,641 - __main__ - ERROR - Error running backtest: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-14 00:01:28,830 - __main__ - ERROR - Error in main execution: Failed to create report: Backtest failed: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-14 00:01:28,830 - __main__ - ERROR - Analysis failed: Failed to create report: Backtest failed: Backtest execution failed: Failed to calculate metrics: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of 'RangeIndex'
+2025-06-14 00:08:34,299 - __main__ - INFO - 
+==================================================
+2025-06-14 00:08:34,304 - __main__ - INFO - ==================================================
+2025-06-14 00:08:34,312 - __main__ - INFO - Strategy config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=2, strategy_type='btc_volume_eth')
+2025-06-14 00:08:34,313 - __main__ - INFO - Risk config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-14 00:08:34,313 - __main__ - INFO - Initialized DataHandler with base directory: C:\Users\sagar\OneDrive\Documents\GitHub\CoinLion
+2025-06-14 00:08:36,914 - __main__ - INFO - Aligned data to 275708 common timestamps
+2025-06-14 00:08:37,082 - __main__ - WARNING - Found 1 non-uniform time intervals in BTC
+2025-06-14 00:08:37,147 - __main__ - WARNING - Found 1 non-uniform time intervals in ETH
+2025-06-14 00:08:37,160 - __main__ - INFO - Non-uniform intervals report saved to output\btcusd_ethusd_10m_20250614_000834\btc_volume_eth_strategy\btcusd_ethusd_10m_non_uniform_intervals_20250614_000837.csv
+2025-06-14 00:08:37,160 - __main__ - INFO - Successfully loaded 275708 rows of BTC data and 275708 rows of ETH data
+2025-06-14 00:08:37,545 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 00:08:39,077 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_000834\btc_volume_eth_strategy\BTCUSD_10T_resampled_changes_20250614_000837.csv
+2025-06-14 00:08:39,179 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 00:08:39,473 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 00:08:41,291 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_000834\btc_volume_eth_strategy\ETHUSD_10T_resampled_changes_20250614_000839.csv
+2025-06-14 00:08:41,452 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 00:08:41,589 - __main__ - INFO - Aligned data to 276192 common timestamps
+2025-06-14 00:08:41,593 - __main__ - INFO - Initialized BTCVolumeETHStrategy with config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=2, strategy_type='btc_volume_eth')
+2025-06-14 00:08:41,593 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-14 00:10:50,315 - __main__ - INFO - Starting BTC Volume -> ETH Strategy Backtest
+2025-06-14 00:10:50,315 - __main__ - INFO - 
+==================================================
+2025-06-14 00:10:50,315 - __main__ - INFO - BTC Volume -> ETH Strategy Backtest
+2025-06-14 00:10:50,315 - __main__ - INFO - ==================================================
+2025-06-14 00:10:50,315 - __main__ - INFO - Creating comprehensive BTC Volume -> ETH backtest report
+2025-06-14 00:10:50,315 - __main__ - INFO - Running BTC Volume -> ETH backtest for BTCUSD -> ETHUSD on 10m timeframe
+2025-06-14 00:10:50,315 - __main__ - INFO - Strategy config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=2, strategy_type='btc_volume_eth')
+2025-06-14 00:10:50,316 - __main__ - INFO - Risk config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-14 00:10:50,316 - __main__ - INFO - Initialized DataHandler with base directory: C:\Users\sagar\OneDrive\Documents\GitHub\CoinLion
+2025-06-14 00:10:52,444 - __main__ - INFO - Aligned data to 275708 common timestamps
+2025-06-14 00:10:52,593 - __main__ - WARNING - Found 1 non-uniform time intervals in BTC
+2025-06-14 00:10:52,657 - __main__ - WARNING - Found 1 non-uniform time intervals in ETH
+2025-06-14 00:10:52,672 - __main__ - INFO - Non-uniform intervals report saved to output\btcusd_ethusd_10m_20250614_001050\btc_volume_eth_strategy\btcusd_ethusd_10m_non_uniform_intervals_20250614_001052.csv
+2025-06-14 00:10:52,673 - __main__ - INFO - Successfully loaded 275708 rows of BTC data and 275708 rows of ETH data
+2025-06-14 00:10:52,945 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 00:10:54,740 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_001050\btc_volume_eth_strategy\BTCUSD_10T_resampled_changes_20250614_001053.csv
+2025-06-14 00:10:54,857 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 00:10:55,111 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 00:10:56,581 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_001050\btc_volume_eth_strategy\ETHUSD_10T_resampled_changes_20250614_001055.csv
+2025-06-14 00:10:56,695 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 00:10:56,766 - __main__ - INFO - Aligned data to 276192 common timestamps
+2025-06-14 00:10:56,770 - __main__ - INFO - Initialized BTCVolumeETHStrategy with config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=2, strategy_type='btc_volume_eth')
+2025-06-14 00:10:56,770 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.02, position_size=1.0)
+2025-06-14 00:10:56,903 - __main__ - INFO - Initialized BacktestEngine for BTC Volume -> ETH Strategy
+2025-06-14 00:10:56,905 - __main__ - INFO - Starting BTC Volume -> ETH backtest execution
+2025-06-14 00:12:15,922 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=1935.90, Return=-80.64%
+2025-06-14 00:12:36,808 - __main__ - INFO - Detailed tracking saved to output\btcusd_ethusd_10m_20250614_001050\btc_volume_eth_strategy\btc_eth_detailed_tracking_20250614_001224.csv
+2025-06-14 00:12:36,834 - __main__ - INFO - Performance metrics saved to output\btcusd_ethusd_10m_20250614_001050\btc_volume_eth_strategy\btc_eth_performance_metrics_20250614_001236.csv
+2025-06-14 00:12:36,834 - __main__ - INFO - Backtest results saved successfully
+2025-06-14 00:12:36,835 - __main__ - INFO - BTC Volume -> ETH backtest completed successfully
+2025-06-14 00:12:36,836 - __main__ - INFO - Initial Capital: 10000.00
+2025-06-14 00:12:36,837 - __main__ - INFO - Final Capital: 1935.90
+2025-06-14 00:12:36,837 - __main__ - INFO - Total Return: -80.64%
+2025-06-14 00:12:36,943 - __main__ - INFO - BTC Volume -> ETH backtest completed successfully
+2025-06-14 00:12:37,209 - __main__ - INFO - Initialized DataHandler with base directory: C:\Users\sagar\OneDrive\Documents\GitHub\CoinLion
+2025-06-14 00:12:39,137 - __main__ - INFO - Aligned data to 275708 common timestamps
+2025-06-14 00:12:39,187 - __main__ - WARNING - Found 1 non-uniform time intervals in BTC
+2025-06-14 00:12:39,216 - __main__ - WARNING - Found 1 non-uniform time intervals in ETH
+2025-06-14 00:12:39,218 - __main__ - INFO - Non-uniform intervals report saved to output\btcusd_ethusd_10m_20250614_001237\btc_volume_eth_strategy\btcusd_ethusd_10m_non_uniform_intervals_20250614_001239.csv
+2025-06-14 00:12:39,218 - __main__ - INFO - Successfully loaded 275708 rows of BTC data and 275708 rows of ETH data
+2025-06-14 00:12:39,429 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 00:12:41,132 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_001237\btc_volume_eth_strategy\BTCUSD_10T_resampled_changes_20250614_001239.csv
+2025-06-14 00:12:41,291 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 00:12:41,573 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 00:12:44,050 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_001237\btc_volume_eth_strategy\ETHUSD_10T_resampled_changes_20250614_001241.csv
+2025-06-14 00:12:44,203 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 00:12:44,398 - __main__ - INFO - Aligned data to 276192 common timestamps
+2025-06-14 00:12:44,410 - __main__ - INFO - Initialized BTCVolumeETHStrategy with config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=2, strategy_type='btc_volume_eth')
+2025-06-14 00:12:44,603 - __main__ - INFO - Initialized BacktestVisualizer for BTC Volume -> ETH Strategy
+2025-06-14 00:13:13,093 - __main__ - INFO - Trade log saved to output\btcusd_ethusd_10m_20250614_001237\btc_volume_eth_strategy\btcusd_ethusd_10m_btc_volume_eth_trades_20250614_001313.csv
+2025-06-14 00:13:13,094 - __main__ - INFO - Charts saved to output\btcusd_ethusd_10m_20250614_001237\btc_volume_eth_strategy
+2025-06-14 00:13:13,094 - __main__ - INFO - 
+BTC Volume -> ETH Strategy Backtest Summary:
+2025-06-14 00:13:13,100 - __main__ - INFO - 
+                Metric               Value
+                 Start 2020-01-01 00:00:00
+                   End 2025-04-01 23:50:00
+                Period  1917 days 23:50:00
+           Start Value        10000.000000
+             End Value         1935.900037
+      Total Return [%]          -80.641000
+  Benchmark Return [%]         1384.094166
+Max Gross Exposure [%]         4702.289857
+       Total Fees Paid            0.000000
+      Max Drawdown [%]           88.633316
+ Max Drawdown Duration  1838 days 04:40:00
+          Total Trades                2347
+          Win Rate [%]           36.557307
+        Best Trade [%]           22.773991
+       Worst Trade [%]           -9.524547
+         Profit Factor            0.882154
+            Expectancy           -3.435918
+          Sharpe Ratio           -0.513830
+         Sortino Ratio           -0.436136
+2025-06-14 00:13:13,103 - __main__ - INFO - 
+==================================================
+2025-06-14 00:13:13,104 - __main__ - INFO - BTC Volume -> ETH Strategy Analysis completed successfully!
+2025-06-14 00:13:13,104 - __main__ - INFO - ==================================================
+2025-06-14 00:13:13,105 - __main__ - INFO - BTC Volume -> ETH Strategy analysis completed successfully!
+2025-06-14 09:24:17,899 - __main__ - INFO - Starting BTC Volume -> ETH Strategy Backtest
+2025-06-14 09:24:17,899 - __main__ - INFO - 
+==================================================
+2025-06-14 09:24:17,899 - __main__ - INFO - BTC Volume -> ETH Strategy Backtest
+2025-06-14 09:24:17,900 - __main__ - INFO - ==================================================
+2025-06-14 09:24:17,900 - __main__ - INFO - Creating comprehensive BTC Volume -> ETH backtest report
+2025-06-14 09:24:17,900 - __main__ - INFO - Running BTC Volume -> ETH backtest for BTCUSD -> ETHUSD on 10m timeframe
+2025-06-14 09:24:17,900 - __main__ - INFO - Strategy config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=2, strategy_type='btc_volume_eth')
+2025-06-14 09:24:17,900 - __main__ - INFO - Risk config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.05, position_size=1.0)
+2025-06-14 09:24:17,900 - __main__ - INFO - Initialized DataHandler with base directory: C:\Users\sagar\OneDrive\Documents\GitHub\CoinLion
+2025-06-14 09:24:20,517 - __main__ - INFO - Aligned data to 275708 common timestamps
+2025-06-14 09:24:20,613 - __main__ - WARNING - Found 1 non-uniform time intervals in BTC
+2025-06-14 09:24:20,642 - __main__ - WARNING - Found 1 non-uniform time intervals in ETH
+2025-06-14 09:24:20,650 - __main__ - INFO - Non-uniform intervals report saved to output\btcusd_ethusd_10m_20250614_092417\btc_volume_eth_strategy\btcusd_ethusd_10m_non_uniform_intervals_20250614_092420.csv
+2025-06-14 09:24:20,650 - __main__ - INFO - Successfully loaded 275708 rows of BTC data and 275708 rows of ETH data
+2025-06-14 09:24:21,052 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 09:24:23,225 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_092417\btc_volume_eth_strategy\BTCUSD_10T_resampled_changes_20250614_092421.csv
+2025-06-14 09:24:23,358 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 09:24:23,672 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 09:24:25,460 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_092417\btc_volume_eth_strategy\ETHUSD_10T_resampled_changes_20250614_092423.csv
+2025-06-14 09:24:25,556 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 09:24:25,666 - __main__ - INFO - Aligned data to 276192 common timestamps
+2025-06-14 09:24:25,672 - __main__ - INFO - Initialized BTCVolumeETHStrategy with config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=2, strategy_type='btc_volume_eth')
+2025-06-14 09:24:25,673 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.05, position_size=1.0)
+2025-06-14 09:24:25,839 - __main__ - INFO - Initialized BacktestEngine for BTC Volume -> ETH Strategy
+2025-06-14 09:24:25,839 - __main__ - INFO - Starting BTC Volume -> ETH backtest execution
+2025-06-14 09:25:52,240 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=1380.39, Return=-86.20%
+2025-06-14 09:26:11,657 - __main__ - INFO - Detailed tracking saved to output\btcusd_ethusd_10m_20250614_092417\btc_volume_eth_strategy\btc_eth_detailed_tracking_20250614_092601.csv
+2025-06-14 09:26:11,681 - __main__ - INFO - Performance metrics saved to output\btcusd_ethusd_10m_20250614_092417\btc_volume_eth_strategy\btc_eth_performance_metrics_20250614_092611.csv
+2025-06-14 09:26:11,684 - __main__ - INFO - Backtest results saved successfully
+2025-06-14 09:26:11,685 - __main__ - INFO - BTC Volume -> ETH backtest completed successfully
+2025-06-14 09:26:11,686 - __main__ - INFO - Initial Capital: 10000.00
+2025-06-14 09:26:11,687 - __main__ - INFO - Final Capital: 1380.39
+2025-06-14 09:26:11,687 - __main__ - INFO - Total Return: -86.20%
+2025-06-14 09:26:11,793 - __main__ - INFO - BTC Volume -> ETH backtest completed successfully
+2025-06-14 09:26:12,070 - __main__ - INFO - Initialized DataHandler with base directory: C:\Users\sagar\OneDrive\Documents\GitHub\CoinLion
+2025-06-14 09:26:14,580 - __main__ - INFO - Aligned data to 275708 common timestamps
+2025-06-14 09:26:14,676 - __main__ - WARNING - Found 1 non-uniform time intervals in BTC
+2025-06-14 09:26:14,737 - __main__ - WARNING - Found 1 non-uniform time intervals in ETH
+2025-06-14 09:26:14,742 - __main__ - INFO - Non-uniform intervals report saved to output\btcusd_ethusd_10m_20250614_092612\btc_volume_eth_strategy\btcusd_ethusd_10m_non_uniform_intervals_20250614_092614.csv
+2025-06-14 09:26:14,742 - __main__ - INFO - Successfully loaded 275708 rows of BTC data and 275708 rows of ETH data
+2025-06-14 09:26:15,028 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 09:26:17,166 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_092612\btc_volume_eth_strategy\BTCUSD_10T_resampled_changes_20250614_092615.csv
+2025-06-14 09:26:17,318 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 09:26:17,609 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 09:26:20,097 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_092612\btc_volume_eth_strategy\ETHUSD_10T_resampled_changes_20250614_092617.csv
+2025-06-14 09:26:20,329 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 09:26:20,485 - __main__ - INFO - Aligned data to 276192 common timestamps
+2025-06-14 09:26:20,496 - __main__ - INFO - Initialized BTCVolumeETHStrategy with config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=2, strategy_type='btc_volume_eth')
+2025-06-14 09:26:20,686 - __main__ - INFO - Initialized BacktestVisualizer for BTC Volume -> ETH Strategy
+2025-06-14 09:26:48,798 - __main__ - INFO - Trade log saved to output\btcusd_ethusd_10m_20250614_092612\btc_volume_eth_strategy\btcusd_ethusd_10m_btc_volume_eth_trades_20250614_092648.csv
+2025-06-14 09:26:48,799 - __main__ - INFO - Charts saved to output\btcusd_ethusd_10m_20250614_092612\btc_volume_eth_strategy
+2025-06-14 09:26:48,799 - __main__ - INFO - 
+BTC Volume -> ETH Strategy Backtest Summary:
+2025-06-14 09:26:48,804 - __main__ - INFO - 
+                Metric               Value
+                 Start 2020-01-01 00:00:00
+                   End 2025-04-01 23:50:00
+                Period  1917 days 23:50:00
+           Start Value        10000.000000
+             End Value         1380.386265
+      Total Return [%]          -86.196137
+  Benchmark Return [%]         1384.094166
+Max Gross Exposure [%]         4335.847527
+       Total Fees Paid            0.000000
+      Max Drawdown [%]           92.931353
+ Max Drawdown Duration  1710 days 13:30:00
+          Total Trades                1668
+          Win Rate [%]           36.151079
+        Best Trade [%]           30.337678
+       Worst Trade [%]          -10.120703
+         Profit Factor            0.870518
+            Expectancy           -5.167634
+          Sharpe Ratio           -0.420555
+         Sortino Ratio           -0.490036
+2025-06-14 09:26:48,808 - __main__ - INFO - 
+==================================================
+2025-06-14 09:26:48,809 - __main__ - INFO - BTC Volume -> ETH Strategy Analysis completed successfully!
+2025-06-14 09:26:48,810 - __main__ - INFO - ==================================================
+2025-06-14 09:26:48,810 - __main__ - INFO - BTC Volume -> ETH Strategy analysis completed successfully!
+2025-06-14 09:37:34,809 - __main__ - INFO - Starting BTC Volume -> ETH Strategy Backtest
+2025-06-14 09:37:34,809 - __main__ - INFO - 
+==================================================
+2025-06-14 09:37:34,809 - __main__ - INFO - BTC Volume -> ETH Strategy Backtest
+2025-06-14 09:37:34,810 - __main__ - INFO - ==================================================
+2025-06-14 09:37:34,810 - __main__ - INFO - Creating comprehensive BTC Volume -> ETH backtest report
+2025-06-14 09:37:34,810 - __main__ - INFO - Running BTC Volume -> ETH backtest for BTCUSD -> ETHUSD on 10m timeframe
+2025-06-14 09:37:34,810 - __main__ - INFO - Strategy config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=1, strategy_type='btc_volume_eth')
+2025-06-14 09:37:34,810 - __main__ - INFO - Risk config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.05, position_size=1.0)
+2025-06-14 09:37:34,810 - __main__ - INFO - Initialized DataHandler with base directory: C:\Users\sagar\OneDrive\Documents\GitHub\CoinLion
+2025-06-14 09:37:36,945 - __main__ - INFO - Aligned data to 275708 common timestamps
+2025-06-14 09:37:37,069 - __main__ - WARNING - Found 1 non-uniform time intervals in BTC
+2025-06-14 09:37:37,127 - __main__ - WARNING - Found 1 non-uniform time intervals in ETH
+2025-06-14 09:37:37,140 - __main__ - INFO - Non-uniform intervals report saved to output\btcusd_ethusd_10m_20250614_093734\btc_volume_eth_strategy\btcusd_ethusd_10m_non_uniform_intervals_20250614_093737.csv
+2025-06-14 09:37:37,140 - __main__ - INFO - Successfully loaded 275708 rows of BTC data and 275708 rows of ETH data
+2025-06-14 09:37:37,477 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 09:37:39,364 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_093734\btc_volume_eth_strategy\BTCUSD_10T_resampled_changes_20250614_093737.csv
+2025-06-14 09:37:39,528 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 09:37:39,945 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 09:37:41,929 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_093734\btc_volume_eth_strategy\ETHUSD_10T_resampled_changes_20250614_093740.csv
+2025-06-14 09:37:42,047 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 09:37:42,191 - __main__ - INFO - Aligned data to 276192 common timestamps
+2025-06-14 09:37:42,196 - __main__ - INFO - Initialized BTCVolumeETHStrategy with config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=1, strategy_type='btc_volume_eth')
+2025-06-14 09:37:42,196 - __main__ - INFO - Initialized RiskManager with config: RiskConfig(take_profit=None, stop_loss=None, trailing_stop=0.05, position_size=1.0)
+2025-06-14 09:37:42,357 - __main__ - INFO - Initialized BacktestEngine for BTC Volume -> ETH Strategy
+2025-06-14 09:37:42,358 - __main__ - INFO - Starting BTC Volume -> ETH backtest execution
+2025-06-14 09:38:59,727 - __main__ - INFO - Performance calculation: Initial=10000.00, Final=2173.07, Return=-78.27%
+2025-06-14 09:39:17,988 - __main__ - INFO - Detailed tracking saved to output\btcusd_ethusd_10m_20250614_093734\btc_volume_eth_strategy\btc_eth_detailed_tracking_20250614_093907.csv
+2025-06-14 09:39:17,996 - __main__ - INFO - Performance metrics saved to output\btcusd_ethusd_10m_20250614_093734\btc_volume_eth_strategy\btc_eth_performance_metrics_20250614_093917.csv
+2025-06-14 09:39:17,996 - __main__ - INFO - Backtest results saved successfully
+2025-06-14 09:39:17,996 - __main__ - INFO - BTC Volume -> ETH backtest completed successfully
+2025-06-14 09:39:17,997 - __main__ - INFO - Initial Capital: 10000.00
+2025-06-14 09:39:17,997 - __main__ - INFO - Final Capital: 2173.07
+2025-06-14 09:39:17,997 - __main__ - INFO - Total Return: -78.27%
+2025-06-14 09:39:18,074 - __main__ - INFO - BTC Volume -> ETH backtest completed successfully
+2025-06-14 09:39:18,372 - __main__ - INFO - Initialized DataHandler with base directory: C:\Users\sagar\OneDrive\Documents\GitHub\CoinLion
+2025-06-14 09:39:20,287 - __main__ - INFO - Aligned data to 275708 common timestamps
+2025-06-14 09:39:20,361 - __main__ - WARNING - Found 1 non-uniform time intervals in BTC
+2025-06-14 09:39:20,410 - __main__ - WARNING - Found 1 non-uniform time intervals in ETH
+2025-06-14 09:39:20,416 - __main__ - INFO - Non-uniform intervals report saved to output\btcusd_ethusd_10m_20250614_093918\btc_volume_eth_strategy\btcusd_ethusd_10m_non_uniform_intervals_20250614_093920.csv
+2025-06-14 09:39:20,417 - __main__ - INFO - Successfully loaded 275708 rows of BTC data and 275708 rows of ETH data
+2025-06-14 09:39:20,704 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 09:39:21,998 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_093918\btc_volume_eth_strategy\BTCUSD_10T_resampled_changes_20250614_093920.csv
+2025-06-14 09:39:22,072 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 09:39:22,337 - __main__ - WARNING - After resampling, found 1936 missing values
+2025-06-14 09:39:24,942 - __main__ - INFO - Resampling changes saved to output\btcusd_ethusd_10m_20250614_093918\btc_volume_eth_strategy\ETHUSD_10T_resampled_changes_20250614_093922.csv
+2025-06-14 09:39:25,094 - __main__ - INFO - Resampled data from 275708 to 276192 rows
+2025-06-14 09:39:25,259 - __main__ - INFO - Aligned data to 276192 common timestamps
+2025-06-14 09:39:25,263 - __main__ - INFO - Initialized BTCVolumeETHStrategy with config: StrategyConfig(volume_window=20, volume_threshold=2.0, momentum_periods=3, momentum_threshold=0.01, signal_delay=1, strategy_type='btc_volume_eth')
+2025-06-14 09:39:25,375 - __main__ - INFO - Initialized BacktestVisualizer for BTC Volume -> ETH Strategy
+2025-06-14 09:39:44,413 - __main__ - INFO - Trade log saved to output\btcusd_ethusd_10m_20250614_093918\btc_volume_eth_strategy\btcusd_ethusd_10m_btc_volume_eth_trades_20250614_093944.csv
+2025-06-14 09:39:44,413 - __main__ - INFO - Charts saved to output\btcusd_ethusd_10m_20250614_093918\btc_volume_eth_strategy
+2025-06-14 09:39:44,413 - __main__ - INFO - 
+BTC Volume -> ETH Strategy Backtest Summary:
+2025-06-14 09:39:44,417 - __main__ - INFO - 
+                Metric               Value
+                 Start 2020-01-01 00:00:00
+                   End 2025-04-01 23:50:00
+                Period  1917 days 23:50:00
+           Start Value        10000.000000
+             End Value         2173.065210
+      Total Return [%]          -78.269348
+  Benchmark Return [%]         1384.094166
+Max Gross Exposure [%]         3930.724707
+       Total Fees Paid            0.000000
+      Max Drawdown [%]           88.768023
+ Max Drawdown Duration  1903 days 22:50:00
+          Total Trades                1664
+          Win Rate [%]           36.598558
+        Best Trade [%]           31.821400
+       Worst Trade [%]           -9.970136
+         Profit Factor            0.889585
+            Expectancy           -4.703687
+          Sharpe Ratio           -0.251433
+         Sortino Ratio           -0.290522
+2025-06-14 09:39:44,418 - __main__ - INFO - 
+==================================================
+2025-06-14 09:39:44,418 - __main__ - INFO - BTC Volume -> ETH Strategy Analysis completed successfully!
+2025-06-14 09:39:44,418 - __main__ - INFO - ==================================================
+2025-06-14 09:39:44,419 - __main__ - INFO - BTC Volume -> ETH Strategy analysis completed successfully!

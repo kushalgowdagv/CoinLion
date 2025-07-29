@@ -16,12 +16,12 @@ from tqdm import tqdm
 
 warnings.filterwarnings('ignore')
 
-# Configure logging
+# Configure logging with UTF-8 encoding
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('backtest.log'),
+        logging.FileHandler('backtest.log', encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
@@ -47,7 +47,7 @@ class RiskManagementError(BacktestError):
 # Configuration Classes
 @dataclass
 class StrategyConfig:
-    """Configuration for BTC Volume → ETH strategy parameters"""
+    """Configuration for BTC Volume -> ETH strategy parameters"""
     volume_window: int = 20  # Rolling window for volume average
     volume_threshold: float = 2.0  # Volume surge threshold (2x average)
     momentum_periods: int = 3  # Periods for momentum calculation
@@ -444,9 +444,9 @@ class DataHandler:
             changes_df.to_csv(changes_file, index=False)
             logger.info(f"Resampling changes saved to {changes_file}")
 
-# BTC Volume → ETH Strategy Implementation
+# BTC Volume -> ETH Strategy Implementation
 class BTCVolumeETHStrategy(TradingStrategy):
-    """BTC Volume Surge → ETH Price Strategy implementation"""
+    """BTC Volume Surge -> ETH Price Strategy implementation"""
     
     def __init__(self, config: StrategyConfig):
         super().__init__(config)
@@ -482,11 +482,11 @@ class BTCVolumeETHStrategy(TradingStrategy):
                 result['btc_volume_surge'].rolling(window=2, min_periods=1).sum() >= 1
             ).astype(int)
             
-            logger.debug("BTC Volume → ETH indicators calculated successfully")
+            logger.debug("BTC Volume -> ETH indicators calculated successfully")
             return result
             
         except Exception as e:
-            logger.error(f"Error calculating BTC Volume → ETH indicators: {str(e)}")
+            logger.error(f"Error calculating BTC Volume -> ETH indicators: {str(e)}")
             raise StrategyError(f"Failed to calculate indicators: {str(e)}") from e
     
     def generate_signals(self, btc_data: pd.DataFrame, eth_data: pd.DataFrame) -> pd.DataFrame:
@@ -558,7 +558,7 @@ class BTCVolumeETHStrategy(TradingStrategy):
         
         return strength
 
-# Risk Manager Class (unchanged)
+# Risk Manager Class
 class RiskManager:
     """Handles risk management logic"""
     
@@ -703,12 +703,12 @@ class BacktestEngine:
         self.detailed_tracking: List[Dict[str, Any]] = []
         self.benchmark_data: Optional[pd.DataFrame] = None
         
-        logger.info("Initialized BacktestEngine for BTC Volume → ETH Strategy")
+        logger.info("Initialized BacktestEngine for BTC Volume -> ETH Strategy")
         
     def run_backtest(self) -> Dict[str, Any]:
         """Run the complete backtest"""
         try:
-            logger.info("Starting BTC Volume → ETH backtest execution")
+            logger.info("Starting BTC Volume -> ETH backtest execution")
             
             # Initialize tracking variables
             capital = self.config.initial_capital
@@ -720,9 +720,16 @@ class BacktestEngine:
             # Process each candle
             equity_history, final_capital = self._process_candles(capital, position, benchmark_history)
             
-            # Store results
-            self.equity_curve = pd.DataFrame(equity_history)
-            self.benchmark_data = pd.DataFrame(benchmark_history)
+            # Store results with proper timestamps
+            equity_df = pd.DataFrame(equity_history)
+            if not equity_df.empty:
+                equity_df.set_index('timestamp', inplace=True)
+            self.equity_curve = equity_df
+            
+            benchmark_df = pd.DataFrame(benchmark_history)
+            if not benchmark_df.empty:
+                benchmark_df.set_index('timestamp', inplace=True)
+            self.benchmark_data = benchmark_df
             
             # Calculate metrics
             metrics = self._calculate_performance_metrics(final_capital)
@@ -730,7 +737,7 @@ class BacktestEngine:
             # Save results
             self._save_results(metrics)
             
-            logger.info("BTC Volume → ETH backtest completed successfully")
+            logger.info("BTC Volume -> ETH backtest completed successfully")
             logger.info(f"Initial Capital: {self.config.initial_capital:.2f}")
             logger.info(f"Final Capital: {final_capital:.2f}")
             logger.info(f"Total Return: {((final_capital - self.config.initial_capital) / self.config.initial_capital) * 100:.2f}%")
@@ -1098,7 +1105,7 @@ class BacktestEngine:
         metrics_df.to_csv(metrics_file, index=False)
         logger.info(f"Performance metrics saved to {metrics_file}")
 
-# Performance Metrics Calculator (mostly unchanged)
+# Performance Metrics Calculator
 class PerformanceMetricsCalculator:
     """Calculate performance metrics for backtests"""
     
@@ -1232,24 +1239,42 @@ class PerformanceMetricsCalculator:
         optimization_metrics['max_drawdown_inverse'] = 1 - max_drawdown if max_drawdown > 0 else 1
         
         # Additional risk-adjusted returns
-        if len(self.equity_curve) > 1:
-            equity = self.equity_curve['equity']
-            returns = equity.pct_change().dropna()
-            
-            if not returns.empty and returns.std() > 0:
-                # Risk-adjusted expectancy
-                if self.trades:
-                    trades_df = pd.DataFrame(self.trades)
-                    avg_trade_return = trades_df['pnl'].mean()
-                    trade_return_std = trades_df['pnl'].std()
-                    risk_adjusted_expectancy = avg_trade_return / trade_return_std if trade_return_std > 0 else 0
-                    optimization_metrics['risk_adjusted_expectancy'] = risk_adjusted_expectancy
-                
-                # Consistency score (percentage of positive months)
-                monthly_returns = equity.resample('M').last().pct_change().dropna()
-                if not monthly_returns.empty:
-                    consistency_score = (monthly_returns > 0).sum() / len(monthly_returns)
-                    optimization_metrics['consistency_score'] = consistency_score
+        if len(self.equity_curve) > 1 and hasattr(self.equity_curve, 'index') and len(self.equity_curve.index) > 1:
+            try:
+                # Ensure we have a datetime index for resampling
+                if isinstance(self.equity_curve.index, pd.DatetimeIndex):
+                    equity = self.equity_curve['equity']
+                    returns = equity.pct_change().dropna()
+                    
+                    if not returns.empty and returns.std() > 0:
+                        # Risk-adjusted expectancy
+                        if self.trades:
+                            trades_df = pd.DataFrame(self.trades)
+                            avg_trade_return = trades_df['pnl'].mean()
+                            trade_return_std = trades_df['pnl'].std()
+                            risk_adjusted_expectancy = avg_trade_return / trade_return_std if trade_return_std > 0 else 0
+                            optimization_metrics['risk_adjusted_expectancy'] = risk_adjusted_expectancy
+                        
+                        # Consistency score (percentage of positive months)
+                        try:
+                            monthly_returns = equity.resample('M').last().pct_change().dropna()
+                            if not monthly_returns.empty:
+                                consistency_score = (monthly_returns > 0).sum() / len(monthly_returns)
+                                optimization_metrics['consistency_score'] = consistency_score
+                        except Exception as e:
+                            logger.warning(f"Could not calculate monthly consistency: {e}")
+                            optimization_metrics['consistency_score'] = 0
+                else:
+                    logger.warning("Equity curve does not have DatetimeIndex, skipping advanced metrics")
+                    optimization_metrics['risk_adjusted_expectancy'] = 0
+                    optimization_metrics['consistency_score'] = 0
+            except Exception as e:
+                logger.warning(f"Error calculating optimization metrics: {e}")
+                optimization_metrics['risk_adjusted_expectancy'] = 0
+                optimization_metrics['consistency_score'] = 0
+        else:
+            optimization_metrics['risk_adjusted_expectancy'] = 0
+            optimization_metrics['consistency_score'] = 0
         
         return optimization_metrics
     
@@ -1374,11 +1399,15 @@ class PerformanceMetricsCalculator:
         
         # Calculate maximum duration
         max_duration = pd.Timedelta(0)
-        for period in drawdown_periods:
-            start_time = self.equity_curve.iloc[period['start']]['timestamp']
-            end_time = self.equity_curve.iloc[period['end']]['timestamp']
-            duration = end_time - start_time
-            max_duration = max(max_duration, duration)
+        if hasattr(self.equity_curve, 'index') and len(self.equity_curve.index) > 0:
+            for period in drawdown_periods:
+                try:
+                    start_time = self.equity_curve.index[period['start']]
+                    end_time = self.equity_curve.index[period['end']]
+                    duration = end_time - start_time
+                    max_duration = max(max_duration, duration)
+                except (IndexError, KeyError):
+                    continue
         
         return max_drawdown, max_duration
     
@@ -1414,14 +1443,14 @@ class PerformanceMetricsCalculator:
 
 # Backtest Visualizer Class
 class BacktestVisualizer:
-    """Handles visualization of BTC Volume → ETH strategy results"""
+    """Handles visualization of BTC Volume -> ETH strategy results"""
     
     def __init__(self, eth_data: pd.DataFrame, backtest_results: Dict[str, Any], 
                  output_dir: Optional[str] = None):
         self.eth_data = eth_data
         self.results = backtest_results
         self.output_dir = output_dir
-        logger.info("Initialized BacktestVisualizer for BTC Volume → ETH Strategy")
+        logger.info("Initialized BacktestVisualizer for BTC Volume -> ETH Strategy")
         
     def plot_price_and_signals(self) -> go.Figure:
         """Plot ETH price chart with BTC indicators and signals"""
@@ -1611,7 +1640,7 @@ class BacktestVisualizer:
     def _update_price_chart_layout(self, fig: go.Figure) -> None:
         """Update layout for price chart"""
         fig.update_layout(
-            title='BTC Volume → ETH Strategy Analysis',
+            title='BTC Volume -> ETH Strategy Analysis',
             xaxis3_title='Date',
             yaxis_title='ETH Price',
             yaxis2_title='BTC Volume',
@@ -1640,11 +1669,19 @@ class BacktestVisualizer:
                 row_heights=[0.7, 0.3]
             )
             
+            # Get equity data - handle both indexed and non-indexed DataFrames
+            if hasattr(self.results['equity_curve'], 'index') and len(self.results['equity_curve'].index) > 0:
+                equity_timestamps = self.results['equity_curve'].index
+                equity_values = self.results['equity_curve']['equity']
+            else:
+                equity_timestamps = self.results['equity_curve']['timestamp']
+                equity_values = self.results['equity_curve']['equity']
+            
             # Add equity curve
             fig.add_trace(
                 go.Scatter(
-                    x=self.results['equity_curve']['timestamp'],
-                    y=self.results['equity_curve']['equity'],
+                    x=equity_timestamps,
+                    y=equity_values,
                     name='Strategy Equity',
                     line=dict(color='rgb(75, 192, 192)', width=2),
                     fill='tozeroy',
@@ -1655,10 +1692,17 @@ class BacktestVisualizer:
             
             # Add benchmark (ETH buy and hold)
             if 'benchmark_data' in self.results and self.results['benchmark_data'] is not None:
+                if hasattr(self.results['benchmark_data'], 'index') and len(self.results['benchmark_data'].index) > 0:
+                    benchmark_timestamps = self.results['benchmark_data'].index
+                    benchmark_values = self.results['benchmark_data']['value']
+                else:
+                    benchmark_timestamps = self.results['benchmark_data']['timestamp']
+                    benchmark_values = self.results['benchmark_data']['value']
+                
                 fig.add_trace(
                     go.Scatter(
-                        x=self.results['benchmark_data']['timestamp'],
-                        y=self.results['benchmark_data']['value'],
+                        x=benchmark_timestamps,
+                        y=benchmark_values,
                         name='ETH Buy & Hold',
                         line=dict(color='orange', width=2, dash='dash')
                     ),
@@ -1666,13 +1710,12 @@ class BacktestVisualizer:
                 )
             
             # Calculate and add drawdown
-            equity = self.results['equity_curve']['equity']
-            running_max = equity.cummax()
-            drawdown = (equity - running_max) / running_max * 100
+            running_max = equity_values.cummax()
+            drawdown = (equity_values - running_max) / running_max * 100
             
             fig.add_trace(
                 go.Scatter(
-                    x=self.results['equity_curve']['timestamp'],
+                    x=equity_timestamps,
                     y=drawdown,
                     name='Drawdown',
                     line=dict(color='rgba(255, 99, 132, 1)', width=2),
@@ -1685,8 +1728,8 @@ class BacktestVisualizer:
             # Add zero line for drawdown
             fig.add_trace(
                 go.Scatter(
-                    x=[self.results['equity_curve']['timestamp'].iloc[0], 
-                       self.results['equity_curve']['timestamp'].iloc[-1]],
+                    x=[equity_timestamps.iloc[0] if hasattr(equity_timestamps, 'iloc') else equity_timestamps[0], 
+                       equity_timestamps.iloc[-1] if hasattr(equity_timestamps, 'iloc') else equity_timestamps[-1]],
                     y=[0, 0],
                     mode='lines',
                     line=dict(color='black', width=1, dash='dash'),
@@ -1696,7 +1739,7 @@ class BacktestVisualizer:
             )
             
             fig.update_layout(
-                title='BTC Volume → ETH Strategy: Equity Curve and Drawdown',
+                title='BTC Volume -> ETH Strategy: Equity Curve and Drawdown',
                 xaxis2_title='Date',
                 yaxis_title='Equity',
                 yaxis2_title='Drawdown (%)',
@@ -1782,7 +1825,7 @@ def run_btc_volume_eth_backtest(
     backtest_config: Optional[BacktestConfig] = None
 ) -> Dict[str, Any]:
     """
-    Run a complete BTC Volume → ETH backtest.
+    Run a complete BTC Volume -> ETH backtest.
     
     Args:
         btc_symbol: BTC symbol to test
@@ -1804,7 +1847,7 @@ def run_btc_volume_eth_backtest(
         if backtest_config is None:
             backtest_config = BacktestConfig()
         
-        logger.info(f"Running BTC Volume → ETH backtest for {btc_symbol.upper()} → {eth_symbol.upper()} on {timeframe} timeframe")
+        logger.info(f"Running BTC Volume -> ETH backtest for {btc_symbol.upper()} -> {eth_symbol.upper()} on {timeframe} timeframe")
         logger.info(f"Strategy config: {strategy_config}")
         logger.info(f"Risk config: {risk_config}")
         
@@ -1837,11 +1880,11 @@ def run_btc_volume_eth_backtest(
         )
         results = backtest_engine.run_backtest()
         
-        logger.info("BTC Volume → ETH backtest completed successfully")
+        logger.info("BTC Volume -> ETH backtest completed successfully")
         return results
         
     except Exception as e:
-        logger.error(f"Error running BTC Volume → ETH backtest: {str(e)}")
+        logger.error(f"Error running BTC Volume -> ETH backtest: {str(e)}")
         raise BacktestError(f"Backtest failed: {str(e)}") from e
 
 def create_comprehensive_btc_eth_report(
@@ -1854,7 +1897,7 @@ def create_comprehensive_btc_eth_report(
     save_charts: bool = True
 ) -> Dict[str, Any]:
     """
-    Create a comprehensive BTC Volume → ETH backtest report with all visualizations.
+    Create a comprehensive BTC Volume -> ETH backtest report with all visualizations.
     
     Args:
         btc_symbol: BTC symbol to test
@@ -1869,7 +1912,7 @@ def create_comprehensive_btc_eth_report(
         Complete backtest report with charts and metrics
     """
     try:
-        logger.info(f"Creating comprehensive BTC Volume → ETH backtest report")
+        logger.info(f"Creating comprehensive BTC Volume -> ETH backtest report")
         
         # Run backtest
         results = run_btc_volume_eth_backtest(
@@ -1929,7 +1972,7 @@ def create_comprehensive_btc_eth_report(
             logger.info(f"Charts saved to {data_handler.output_strategy_dir}")
         
         # Print summary
-        logger.info("\nBTC Volume → ETH Strategy Backtest Summary:")
+        logger.info("\nBTC Volume -> ETH Strategy Backtest Summary:")
         logger.info("\n" + summary_table.to_string(index=False))
         
         return {
@@ -1942,18 +1985,18 @@ def create_comprehensive_btc_eth_report(
         }
         
     except Exception as e:
-        logger.error(f"Error creating comprehensive BTC Volume → ETH report: {str(e)}")
+        logger.error(f"Error creating comprehensive BTC Volume -> ETH report: {str(e)}")
         raise BacktestError(f"Failed to create report: {str(e)}") from e
 
 # Example usage and main execution
 def main():
-    """Main function demonstrating BTC Volume → ETH strategy"""
+    """Main function demonstrating BTC Volume -> ETH strategy"""
     try:
-        logger.info("Starting BTC Volume → ETH Strategy Backtest")
+        logger.info("Starting BTC Volume -> ETH Strategy Backtest")
         
         # Example: Basic backtest with custom configurations
         logger.info("\n" + "="*50)
-        logger.info("BTC Volume → ETH Strategy Backtest")
+        logger.info("BTC Volume -> ETH Strategy Backtest")
         logger.info("="*50)
         
         strategy_config = StrategyConfig(
@@ -1961,12 +2004,12 @@ def main():
             volume_threshold=2.0,
             momentum_periods=3,
             momentum_threshold=0.01,
-            signal_delay=2,
+            signal_delay=1,
             strategy_type='btc_volume_eth'
         )
         
         risk_config = RiskConfig(
-            trailing_stop=0.02,
+            trailing_stop=0.05,
             position_size=1.0
         )
         
@@ -1987,7 +2030,7 @@ def main():
         )
         
         logger.info("\n" + "="*50)
-        logger.info("BTC Volume → ETH Strategy Analysis completed successfully!")
+        logger.info("BTC Volume -> ETH Strategy Analysis completed successfully!")
         logger.info("="*50)
         
         return comprehensive_report
@@ -2000,7 +2043,7 @@ if __name__ == "__main__":
     # Run main analysis
     try:
         results = main()
-        logger.info("BTC Volume → ETH Strategy analysis completed successfully!")
+        logger.info("BTC Volume -> ETH Strategy analysis completed successfully!")
     except Exception as e:
         logger.error(f"Analysis failed: {str(e)}")
         raise
